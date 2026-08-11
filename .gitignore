@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Model and dataset caches
+.cache/
+hf_cache/
+
+# Run output. Committed result sets live under results/<name>/results.jsonl and
+# are added explicitly; everything else a run drops here is scratch.
+results/_probe/
+results/*/kv_bench_results.jsonl
+results/*/kernel.log
+*.out
+*.err
