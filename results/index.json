@@ -16,5 +16,24 @@
     "rows": 925,
     "samples": 25,
     "taskset": "synthetic"
+  },
+  "needle-qwen-3b-8k-qlast-buzz-rerun": {
+    "conditions": [
+      "qlast"
+    ],
+    "methods": 2,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "nominal_tokens": 8192,
+    "note": "BUZZ only. The first implementation kept one token per interval, which fragments multi-token facts; this rerun replaces the BUZZ rows of needle-qwen-3b-8k-qlast.",
+    "ratios": [
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      1.0
+    ],
+    "rows": 125,
+    "samples": 25,
+    "taskset": "synthetic"
   }
 }
