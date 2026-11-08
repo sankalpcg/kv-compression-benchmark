@@ -1,0 +1,20 @@
+{
+  "needle-qwen-3b-8k-qlast": {
+    "conditions": [
+      "qlast"
+    ],
+    "methods": 10,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "nominal_tokens": 8192,
+    "ratios": [
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      1.0
+    ],
+    "rows": 925,
+    "samples": 25,
+    "taskset": "synthetic"
+  }
+}
