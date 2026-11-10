@@ -86,5 +86,24 @@
     "rows": 3640,
     "samples": 130,
     "taskset": "ruler"
+  },
+  "ruler-qwen-7b-4k-qhidden": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "nominal_tokens": 4096,
+    "note": "Qwen2.5-7B is a bfloat16 model and the T4 used here has no hardware bfloat16. In float16 its logits go non-finite, argmax returns token 0, and the run completes with a large fraction of rows corrupt. Kept as a record of the failure, not as a measurement.",
+    "ratios": [
+      0.1,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "rows": 3640,
+    "samples": 130,
+    "taskset": "ruler",
+    "usable": false
   }
 }
