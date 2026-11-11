@@ -53,6 +53,72 @@
     "samples": 25,
     "taskset": "synthetic"
   },
+  "ruler-llama-8b-4k-qhidden-part1": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 7,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 4096,
+    "note": "Seven methods. Merge with part2 for the full grid.",
+    "ratios": [
+      0.1,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "rows": 2470,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-4k-qhidden-part2": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 3,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 4096,
+    "note": "The remaining three methods. Merge with part1.",
+    "ratios": [
+      0.1,
+      0.2,
+      0.5
+    ],
+    "rows": 1170,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-4k-qvisible": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 9,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 4096,
+    "ratios": [
+      0.1,
+      0.2,
+      0.5
+    ],
+    "rows": 3510,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-4k-qvisible-baseline-only": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 1,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 4096,
+    "note": "Uncompressed baseline only. The main qvisible sweep was launched without 1.0 in RATIOS, which silently drops the baseline, so it was recovered in a second run. Merge the two.",
+    "ratios": [
+      1.0
+    ],
+    "rows": 130,
+    "samples": 130,
+    "taskset": "ruler"
+  },
   "ruler-qwen-3b-4k-qhidden": {
     "conditions": [
       "qhidden"
