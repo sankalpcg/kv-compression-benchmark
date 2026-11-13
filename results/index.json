@@ -99,6 +99,36 @@
     "samples": 130,
     "taskset": "ruler"
   },
+  "ruler-llama-8b-32k-qhidden": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 32768,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-32k-qvisible": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 32768,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
+    "samples": 130,
+    "taskset": "ruler"
+  },
   "ruler-llama-8b-4k-qhidden-part1": {
     "conditions": [
       "qhidden"
