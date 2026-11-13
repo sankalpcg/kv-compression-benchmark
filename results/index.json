@@ -53,6 +53,52 @@
     "samples": 25,
     "taskset": "synthetic"
   },
+  "ruler-llama-8b-16k-qhidden-b10-50": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 16384,
+    "ratios": [
+      0.1,
+      0.5,
+      1.0
+    ],
+    "rows": 2470,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-16k-qhidden-b20": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 16384,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-16k-qvisible": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 16384,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
+    "samples": 130,
+    "taskset": "ruler"
+  },
   "ruler-llama-8b-4k-qhidden-part1": {
     "conditions": [
       "qhidden"
@@ -116,6 +162,52 @@
       1.0
     ],
     "rows": 130,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-8k-qhidden-b10-50": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 8192,
+    "ratios": [
+      0.1,
+      0.5,
+      1.0
+    ],
+    "rows": 2470,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-8k-qhidden-b20": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 8192,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-8b-8k-qvisible": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 8192,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
     "samples": 130,
     "taskset": "ruler"
   },
