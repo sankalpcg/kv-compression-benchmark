@@ -241,6 +241,36 @@
     "samples": 130,
     "taskset": "ruler"
   },
+  "ruler-qwen-3b-16k-qhidden": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "nominal_tokens": 16384,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-qwen-3b-16k-qvisible": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 10,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "nominal_tokens": 16384,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
+    "samples": 130,
+    "taskset": "ruler"
+  },
   "ruler-qwen-3b-4k-qhidden": {
     "conditions": [
       "qhidden"
@@ -272,6 +302,36 @@
       1.0
     ],
     "rows": 3640,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-qwen-3b-8k-qhidden": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "nominal_tokens": 8192,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-qwen-3b-8k-qvisible": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 10,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "nominal_tokens": 8192,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 1300,
     "samples": 130,
     "taskset": "ruler"
   },
