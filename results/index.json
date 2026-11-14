@@ -69,6 +69,40 @@
     "samples": 25,
     "taskset": "synthetic"
   },
+  "ruler-llama-3b-4k-qhidden": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "unsloth/Llama-3.2-3B-Instruct",
+    "nominal_tokens": 4096,
+    "ratios": [
+      0.1,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "rows": 3640,
+    "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-3b-4k-qvisible": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 10,
+    "model": "unsloth/Llama-3.2-3B-Instruct",
+    "nominal_tokens": 4096,
+    "ratios": [
+      0.1,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "rows": 3640,
+    "samples": 130,
+    "taskset": "ruler"
+  },
   "ruler-llama-8b-16k-qhidden-b10-50": {
     "conditions": [
       "qhidden"
