@@ -32,6 +32,24 @@
     "samples": 30,
     "taskset": "synthetic"
   },
+  "needle-qwen-3b-8k-qfirst-reuse-rich": {
+    "conditions": [
+      "qfirst",
+      "reuse"
+    ],
+    "haystack": "rich",
+    "methods": 10,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "nominal_tokens": 8192,
+    "ratios": [
+      0.2,
+      0.5,
+      1.0
+    ],
+    "rows": 570,
+    "samples": 30,
+    "taskset": "synthetic"
+  },
   "needle-qwen-3b-8k-qlast": {
     "conditions": [
       "qlast"
@@ -66,6 +84,25 @@
       1.0
     ],
     "rows": 125,
+    "samples": 25,
+    "taskset": "synthetic"
+  },
+  "needle-qwen-3b-8k-qlast-rich": {
+    "conditions": [
+      "qlast"
+    ],
+    "haystack": "rich",
+    "methods": 10,
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "nominal_tokens": 8192,
+    "ratios": [
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      1.0
+    ],
+    "rows": 925,
     "samples": 25,
     "taskset": "synthetic"
   },
