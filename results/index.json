@@ -1,4 +1,20 @@
 {
+  "loogle-shortdep_qa-16k-n105": {
+    "conditions": [
+      "qhidden",
+      "qvisible"
+    ],
+    "methods": 10,
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "nominal_tokens": 16384,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 2100,
+    "samples": 210,
+    "taskset": "loogle"
+  },
   "loogle-shortdep_qa-16k-n50": {
     "conditions": [
       "qhidden",
