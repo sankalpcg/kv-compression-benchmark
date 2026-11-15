@@ -198,5 +198,5 @@ than the repository alone:
 > Sankalp Mandlecha and Noshin Sabuwala. Context Compression for Long-Context
 > Large Language Models: A Survey and the Query-Visibility Gap. 2026.
 
-Two fields in `CITATION.cff` are placeholders until the paper is accepted: the
-journal name, and `repository-code`, which needs the published URL.
+One field in `CITATION.cff` is a placeholder until the paper is accepted: the
+journal name.

@@ -1,5 +1,5 @@
-# Two fields are placeholders until the paper is accepted: the journal name in
-# preferred-citation, and repository-code, which needs the published URL.
+# One field is a placeholder until the paper is accepted: the journal name in
+# preferred-citation.
 cff-version: 1.2.0
 title: KV-cache compression benchmark
 message: >-
@@ -12,6 +12,7 @@ authors:
     alias: SankalpCG
     email: sankalp.mandlecha2003@gmail.com
 license: Apache-2.0
+repository-code: 'https://github.com/sankalpcg/kv-compression-benchmark'
 date-released: '2026-11-15'
 keywords:
   - kv-cache
