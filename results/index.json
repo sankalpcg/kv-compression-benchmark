@@ -116,6 +116,21 @@
     "samples": 130,
     "taskset": "ruler"
   },
+  "ruler-llama-3b-4k-qhidden-b20-n50": {
+    "conditions": [
+      "qhidden"
+    ],
+    "methods": 10,
+    "model": "unsloth/Llama-3.2-3B-Instruct",
+    "nominal_tokens": 4096,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 6500,
+    "samples": 650,
+    "taskset": "ruler"
+  },
   "ruler-llama-3b-4k-qvisible": {
     "conditions": [
       "qvisible"
@@ -131,6 +146,21 @@
     ],
     "rows": 3640,
     "samples": 130,
+    "taskset": "ruler"
+  },
+  "ruler-llama-3b-4k-qvisible-b20-n50": {
+    "conditions": [
+      "qvisible"
+    ],
+    "methods": 10,
+    "model": "unsloth/Llama-3.2-3B-Instruct",
+    "nominal_tokens": 4096,
+    "ratios": [
+      0.2,
+      1.0
+    ],
+    "rows": 6500,
+    "samples": 650,
     "taskset": "ruler"
   },
   "ruler-llama-3b-8k-qhidden": {
