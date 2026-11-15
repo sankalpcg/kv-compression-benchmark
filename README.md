@@ -185,7 +185,18 @@ they are hardware-bound, and measuring them on one accelerator and setting the
 result beside figures obtained on another is the error this harness exists to
 avoid.
 
-## Citation
+## Licence and citation
 
-Accompanies a survey of context compression for long-context language models.
-Citation details go here once the paper has a DOI.
+Apache License 2.0. `NOTICE` records the paper this was built for and the
+third-party content redistributed here, which is the cached RULER rows under
+`tests/fixtures/` and the reference answers stored alongside the generations in
+`results/`.
+
+`CITATION.cff` carries the machine-readable citation. Cite the paper rather
+than the repository alone:
+
+> Sankalp Mandlecha and Noshin Sabuwala. Context Compression for Long-Context
+> Large Language Models: A Survey and the Query-Visibility Gap. 2026.
+
+Two fields in `CITATION.cff` are placeholders until the paper is accepted: the
+journal name, and `repository-code`, which needs the published URL.

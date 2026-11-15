@@ -1,0 +1,46 @@
+# Two fields are placeholders until the paper is accepted: the journal name in
+# preferred-citation, and repository-code, which needs the published URL.
+cff-version: 1.2.0
+title: KV-cache compression benchmark
+message: >-
+  If you use this software or the results under results/, please cite the paper
+  in preferred-citation rather than this repository alone.
+type: software
+authors:
+  - family-names: Mandlecha
+    given-names: Sankalp
+    alias: SankalpCG
+    email: sankalp.mandlecha2003@gmail.com
+license: Apache-2.0
+date-released: '2026-11-15'
+keywords:
+  - kv-cache
+  - context-compression
+  - long-context
+  - large-language-models
+  - reproducibility
+abstract: >-
+  Harness and results for a controlled comparison of nine KV-cache compression
+  policies against an uncompressed baseline, holding the model, the budget
+  definition, the benchmark and the decode loop fixed. Covers RULER at four
+  context lengths, LooGLE, and a synthetic sweep that varies the position of
+  the answer span, under two prompt layouts that differ in whether the question
+  is inside the compressed region.
+preferred-citation:
+  type: article
+  title: >-
+    Context Compression for Long-Context Large Language Models: A Survey and
+    the Query-Visibility Gap
+  authors:
+    - family-names: Mandlecha
+      given-names: Sankalp
+      affiliation: >-
+        Department of Computer Engineering and Information Technology, Veermata
+        Jijabai Technological Institute, Mumbai
+    - family-names: Sabuwala
+      given-names: Noshin
+      affiliation: >-
+        Department of Computer Engineering and Information Technology, Veermata
+        Jijabai Technological Institute, Mumbai
+  year: 2026
+  journal: '[JOURNAL TO BE FILLED BEFORE SUBMISSION]'

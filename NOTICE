@@ -1,0 +1,32 @@
+KV-cache compression benchmark
+Copyright 2026 Sankalp Mandlecha
+
+This product includes software developed for the paper:
+
+  Context Compression for Long-Context Large Language Models:
+  A Survey and the Query-Visibility Gap
+  Sankalp Mandlecha and Noshin Sabuwala
+  Department of Computer Engineering and Information Technology,
+  Veermata Jijabai Technological Institute, Mumbai
+
+  Publication venue and DOI: [TO BE FILLED BEFORE SUBMISSION]
+
+If you use this software or the results under results/, please cite that paper.
+CITATION.cff carries the machine-readable form.
+
+Third-party content redistributed here
+--------------------------------------
+
+tests/fixtures/ruler_rows/ holds rows cached from RULER (Hsieh et al., 2024),
+by way of the pre-generated mirrors simonjegou/ruler and
+SaylorTwift/RULER-<length>-llama-3.2-tokenizer. They are kept so the blob
+splitter test runs without network access. RULER is distributed by NVIDIA under
+the Apache License 2.0, and its haystacks include Paul Graham's essays and
+paragraphs from SQuAD and HotpotQA.
+
+results/*/results.jsonl records the reference answers that RULER and LooGLE
+ship with each item, alongside the generations produced here. LooGLE
+(Li et al., 2024) is distributed by BIGAI under the Apache License 2.0.
+
+Neither dataset is redistributed in full. Running the sweeps downloads them
+from their own repositories.
