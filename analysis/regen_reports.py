@@ -31,7 +31,7 @@ CELLS = {
     "llama3b16k": ["ruler-llama-3b-16k-qhidden", "ruler-llama-3b-16k-qvisible"],
     "llama3b4kn50": ["ruler-llama-3b-4k-qhidden-b20-n50",
                      "ruler-llama-3b-4k-qvisible-b20-n50"],
-    "loogle16k": ["loogle-shortdep_qa-16k-n50"],
+    "loogle16k": ["loogle-shortdep_qa-16k-n105"],
     "loogle16kn105": ["loogle-shortdep_qa-16k-n105"],
 }
 
