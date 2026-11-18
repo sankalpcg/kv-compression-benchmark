@@ -1,550 +1,583 @@
 {
-  "loogle-shortdep_qa-16k-n105": {
-    "conditions": [
-      "qhidden",
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 2100,
-    "samples": 210,
-    "taskset": "loogle"
-  },
-  "loogle-shortdep_qa-16k-n50": {
-    "conditions": [
-      "qhidden",
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1000,
-    "samples": 100,
-    "taskset": "loogle"
-  },
-  "needle-qwen-3b-8k-qfirst-reuse": {
-    "conditions": [
-      "qfirst",
-      "reuse"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.2,
-      0.5,
-      1.0
-    ],
-    "rows": 570,
-    "samples": 30,
-    "taskset": "synthetic"
-  },
-  "needle-qwen-3b-8k-qfirst-reuse-rich": {
-    "conditions": [
-      "qfirst",
-      "reuse"
-    ],
-    "haystack": "rich",
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.2,
-      0.5,
-      1.0
-    ],
-    "rows": 570,
-    "samples": 30,
-    "taskset": "synthetic"
-  },
-  "needle-qwen-3b-8k-qlast": {
-    "conditions": [
-      "qlast"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.1,
-      0.2,
-      0.3,
-      0.5,
-      1.0
-    ],
-    "rows": 925,
-    "samples": 25,
-    "taskset": "synthetic"
-  },
-  "needle-qwen-3b-8k-qlast-buzz-rerun": {
-    "conditions": [
-      "qlast"
-    ],
-    "methods": 2,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 8192,
-    "note": "BUZZ only. The first implementation kept one token per interval, which fragments multi-token facts; this rerun replaces the BUZZ rows of needle-qwen-3b-8k-qlast.",
-    "ratios": [
-      0.1,
-      0.2,
-      0.3,
-      0.5,
-      1.0
-    ],
-    "rows": 125,
-    "samples": 25,
-    "taskset": "synthetic"
-  },
-  "needle-qwen-3b-8k-qlast-rich": {
-    "conditions": [
-      "qlast"
-    ],
-    "haystack": "rich",
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.1,
-      0.2,
-      0.3,
-      0.5,
-      1.0
-    ],
-    "rows": 925,
-    "samples": 25,
-    "taskset": "synthetic"
-  },
-  "ruler-llama-3b-16k-qhidden": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "unsloth/Llama-3.2-3B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-3b-16k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "unsloth/Llama-3.2-3B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-3b-4k-qhidden": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "unsloth/Llama-3.2-3B-Instruct",
-    "nominal_tokens": 4096,
-    "ratios": [
-      0.1,
-      0.2,
-      0.5,
-      1.0
-    ],
-    "rows": 3640,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-3b-4k-qhidden-b20-n50": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "unsloth/Llama-3.2-3B-Instruct",
-    "nominal_tokens": 4096,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 6500,
-    "samples": 650,
-    "taskset": "ruler"
-  },
-  "ruler-llama-3b-4k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "unsloth/Llama-3.2-3B-Instruct",
-    "nominal_tokens": 4096,
-    "ratios": [
-      0.1,
-      0.2,
-      0.5,
-      1.0
-    ],
-    "rows": 3640,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-3b-4k-qvisible-b20-n50": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "unsloth/Llama-3.2-3B-Instruct",
-    "nominal_tokens": 4096,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 6500,
-    "samples": 650,
-    "taskset": "ruler"
-  },
-  "ruler-llama-3b-8k-qhidden": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "unsloth/Llama-3.2-3B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-3b-8k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "unsloth/Llama-3.2-3B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-16k-qhidden-b10-50": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.1,
-      0.5,
-      1.0
-    ],
-    "rows": 2470,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-16k-qhidden-b20": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-16k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-32k-qhidden": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 32768,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-32k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 32768,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-4k-qhidden-part1": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 7,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 4096,
-    "note": "Seven methods. Merge with part2 for the full grid.",
-    "ratios": [
-      0.1,
-      0.2,
-      0.5,
-      1.0
-    ],
-    "rows": 2470,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-4k-qhidden-part2": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 3,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 4096,
-    "note": "The remaining three methods. Merge with part1.",
-    "ratios": [
-      0.1,
-      0.2,
-      0.5
-    ],
-    "rows": 1170,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-4k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 9,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 4096,
-    "ratios": [
-      0.1,
-      0.2,
-      0.5
-    ],
-    "rows": 3510,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-4k-qvisible-baseline-only": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 1,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 4096,
-    "note": "Uncompressed baseline only. The main qvisible sweep was launched without 1.0 in RATIOS, which silently drops the baseline, so it was recovered in a second run. Merge the two.",
-    "ratios": [
-      1.0
-    ],
-    "rows": 130,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-8k-qhidden-b10-50": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.1,
-      0.5,
-      1.0
-    ],
-    "rows": 2470,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-8k-qhidden-b20": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-llama-8b-8k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-qwen-3b-16k-qhidden": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-qwen-3b-16k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 16384,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-qwen-3b-4k-qhidden": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 4096,
-    "ratios": [
-      0.1,
-      0.2,
-      0.5,
-      1.0
-    ],
-    "rows": 3640,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-qwen-3b-4k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 4096,
-    "ratios": [
-      0.1,
-      0.2,
-      0.5,
-      1.0
-    ],
-    "rows": 3640,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-qwen-3b-8k-qhidden": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-qwen-3b-8k-qvisible": {
-    "conditions": [
-      "qvisible"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-3B-Instruct",
-    "nominal_tokens": 8192,
-    "ratios": [
-      0.2,
-      1.0
-    ],
-    "rows": 1300,
-    "samples": 130,
-    "taskset": "ruler"
-  },
-  "ruler-qwen-7b-4k-qhidden": {
-    "conditions": [
-      "qhidden"
-    ],
-    "methods": 10,
-    "model": "Qwen/Qwen2.5-7B-Instruct",
-    "nominal_tokens": 4096,
-    "note": "Qwen2.5-7B is a bfloat16 model and the T4 used here has no hardware bfloat16. In float16 its logits go non-finite, argmax returns token 0, and the run completes with a large fraction of rows corrupt. Kept as a record of the failure, not as a measurement.",
-    "ratios": [
-      0.1,
-      0.2,
-      0.5,
-      1.0
-    ],
-    "rows": 3640,
-    "samples": 130,
-    "taskset": "ruler",
-    "usable": false
-  }
+ "loogle-longdep_qa-16k-n50": {
+  "conditions": [
+   "qhidden",
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 16384,
+  "note": "LooGLE long-dependency split, reported in Section 7.6 as a bound on the harness rather than on the policies: the uncompressed model reaches 13.8 token F1 and answers 21 of the 50 documents at exactly zero, so the split cannot measure what compression costs. No table uses it.",
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1000,
+  "samples": 50,
+  "taskset": "loogle"
+ },
+ "loogle-shortdep_qa-16k-n105": {
+  "conditions": [
+   "qhidden",
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 2100,
+  "samples": 210,
+  "taskset": "loogle"
+ },
+ "loogle-shortdep_qa-16k-n50": {
+  "conditions": [
+   "qhidden",
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1000,
+  "samples": 100,
+  "taskset": "loogle"
+ },
+ "needle-qwen-3b-8k-qfirst-reuse": {
+  "conditions": [
+   "qfirst",
+   "reuse"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.2,
+   0.5,
+   1.0
+  ],
+  "rows": 570,
+  "samples": 30,
+  "taskset": "synthetic"
+ },
+ "needle-qwen-3b-8k-qfirst-reuse-rich": {
+  "conditions": [
+   "qfirst",
+   "reuse"
+  ],
+  "haystack": "rich",
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.2,
+   0.5,
+   1.0
+  ],
+  "rows": 570,
+  "samples": 30,
+  "taskset": "synthetic"
+ },
+ "needle-qwen-3b-8k-qlast": {
+  "conditions": [
+   "qlast"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.1,
+   0.2,
+   0.3,
+   0.5,
+   1.0
+  ],
+  "rows": 925,
+  "samples": 25,
+  "taskset": "synthetic"
+ },
+ "needle-qwen-3b-8k-qlast-buzz-rerun": {
+  "conditions": [
+   "qlast"
+  ],
+  "methods": 2,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 8192,
+  "note": "BUZZ only. The first implementation kept one token per interval, which fragments multi-token facts; this rerun replaces the BUZZ rows of needle-qwen-3b-8k-qlast.",
+  "ratios": [
+   0.1,
+   0.2,
+   0.3,
+   0.5,
+   1.0
+  ],
+  "rows": 125,
+  "samples": 25,
+  "taskset": "synthetic"
+ },
+ "needle-qwen-3b-8k-qlast-rich": {
+  "conditions": [
+   "qlast"
+  ],
+  "haystack": "rich",
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.1,
+   0.2,
+   0.3,
+   0.5,
+   1.0
+  ],
+  "rows": 925,
+  "samples": 25,
+  "taskset": "synthetic"
+ },
+ "ruler-llama-3b-16k-qhidden": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-3b-16k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-3b-4k-qdecoy": {
+  "conditions": [
+   "qdecoy"
+  ],
+  "methods": 5,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 4096,
+  "note": "The query-visibility ablation. An unrelated question of near-identical token length, taken from another sample of the same task, sits where qvisible puts the real one; the real question is forwarded after compression as under qhidden. Pairs against ruler-llama-3b-4k-qhidden and -qvisible, which draw the same samples. `decoy_from` on each row names the sample the decoy came from.",
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 650,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-3b-4k-qhidden": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 4096,
+  "ratios": [
+   0.1,
+   0.2,
+   0.5,
+   1.0
+  ],
+  "rows": 3640,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-3b-4k-qhidden-b20-n50": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 4096,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 6500,
+  "samples": 650,
+  "taskset": "ruler"
+ },
+ "ruler-llama-3b-4k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 4096,
+  "ratios": [
+   0.1,
+   0.2,
+   0.5,
+   1.0
+  ],
+  "rows": 3640,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-3b-4k-qvisible-b20-n50": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 4096,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 6500,
+  "samples": 650,
+  "taskset": "ruler"
+ },
+ "ruler-llama-3b-8k-qhidden": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-3b-8k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "unsloth/Llama-3.2-3B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-16k-qhidden-b10-50": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.1,
+   0.5,
+   1.0
+  ],
+  "rows": 2470,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-16k-qhidden-b20": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-16k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-32k-qhidden": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 32768,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-32k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 32768,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-4k-qhidden-part1": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 7,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 4096,
+  "note": "Seven methods. Merge with part2 for the full grid.",
+  "ratios": [
+   0.1,
+   0.2,
+   0.5,
+   1.0
+  ],
+  "rows": 2470,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-4k-qhidden-part2": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 3,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 4096,
+  "note": "The remaining three methods. Merge with part1.",
+  "ratios": [
+   0.1,
+   0.2,
+   0.5
+  ],
+  "rows": 1170,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-4k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 9,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 4096,
+  "ratios": [
+   0.1,
+   0.2,
+   0.5
+  ],
+  "rows": 3510,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-4k-qvisible-baseline-only": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 1,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 4096,
+  "note": "Uncompressed baseline only. The main qvisible sweep was launched without 1.0 in RATIOS, which silently drops the baseline, so it was recovered in a second run. Merge the two.",
+  "ratios": [
+   1.0
+  ],
+  "rows": 130,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-8k-qhidden-b10-50": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.1,
+   0.5,
+   1.0
+  ],
+  "rows": 2470,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-8k-qhidden-b20": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-llama-8b-8k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-qwen-3b-16k-qhidden": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-qwen-3b-16k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 16384,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-qwen-3b-4k-qhidden": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 4096,
+  "ratios": [
+   0.1,
+   0.2,
+   0.5,
+   1.0
+  ],
+  "rows": 3640,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-qwen-3b-4k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 4096,
+  "ratios": [
+   0.1,
+   0.2,
+   0.5,
+   1.0
+  ],
+  "rows": 3640,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-qwen-3b-8k-qhidden": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-qwen-3b-8k-qvisible": {
+  "conditions": [
+   "qvisible"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "nominal_tokens": 8192,
+  "ratios": [
+   0.2,
+   1.0
+  ],
+  "rows": 1300,
+  "samples": 130,
+  "taskset": "ruler"
+ },
+ "ruler-qwen-7b-4k-qhidden": {
+  "conditions": [
+   "qhidden"
+  ],
+  "methods": 10,
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "nominal_tokens": 4096,
+  "note": "Qwen2.5-7B is a bfloat16 model and the T4 used here has no hardware bfloat16. In float16 its logits go non-finite, argmax returns token 0, and the run completes with a large fraction of rows corrupt. Kept as a record of the failure, not as a measurement.",
+  "ratios": [
+   0.1,
+   0.2,
+   0.5,
+   1.0
+  ],
+  "rows": 3640,
+  "samples": 130,
+  "taskset": "ruler",
+  "usable": false
+ }
 }

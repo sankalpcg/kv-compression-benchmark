@@ -19,6 +19,7 @@ Paths are relative to the repository root. All of these run without a GPU.
 | 11 `tab:gapmatrix` | the nine cells in `analysis/regen_reports.py` | `python analysis/regen_reports.py` then `python analysis/make_gap_matrix.py` |
 | 12 `tab:rulerci-llama318b-32k` | `ruler-llama-8b-32k-qhidden`, `ruler-llama-8b-32k-qvisible` | `bootstrap_ci.py` over both |
 | 13 `tab:rulermem` | derived from Equation 1 and the retained fractions; no result file | n/a |
+| 14 `tab:decoy` | `ruler-llama-3b-4k-qhidden`, `-qvisible`, `-qdecoy` | `python analysis/regen_reports.py decoy3b4k`, then read the two decoy blocks of `reports/ci_report_decoy3b4k.txt` |
 
 The fifty-sample replication discussed in Section 7.6 but not tabled comes from
 `ruler-llama-3b-4k-qhidden-b20-n50` and `ruler-llama-3b-4k-qvisible-b20-n50`.
@@ -49,6 +50,10 @@ surveyed literature and are not computed from any run.
 Listed so a reader is not left wondering why they are here.
 
 - `loogle-shortdep_qa-16k-n50` — superseded by the 105-document run
+- `loogle-longdep_qa-16k-n50` — the long-dependency split discussed in
+  Section 7.6's limitations. The uncompressed model is near the floor on it
+  (13.8 token F1, 21 of 50 documents at exactly zero), so it bounds the
+  harness rather than the policies and no table reports it
 - `ruler-llama-3b-8k-*`, `ruler-llama-3b-16k-*` — ran after the write-up
 - `needle-qwen-3b-8k-*-rich` — a richer-distractor haystack, ran after the write-up
 - `ruler-qwen-7b-4k-qhidden` — kept as a record of a failure, marked unusable in

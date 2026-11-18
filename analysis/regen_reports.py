@@ -31,6 +31,11 @@ CELLS = {
     "llama3b16k": ["ruler-llama-3b-16k-qhidden", "ruler-llama-3b-16k-qvisible"],
     "llama3b4kn50": ["ruler-llama-3b-4k-qhidden-b20-n50",
                      "ruler-llama-3b-4k-qvisible-b20-n50"],
+    # All three visibility arms in one invocation, so the bootstrap pairs them
+    # on the same trial indices and the decoy contrasts are paired differences
+    # rather than two independent draws.
+    "decoy3b4k": ["ruler-llama-3b-4k-qhidden", "ruler-llama-3b-4k-qvisible",
+                  "ruler-llama-3b-4k-qdecoy"],
     "loogle16k": ["loogle-shortdep_qa-16k-n105"],
     "loogle16kn105": ["loogle-shortdep_qa-16k-n105"],
 }

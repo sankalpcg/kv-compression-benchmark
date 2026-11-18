@@ -15,3 +15,6 @@ results/*/kv_bench_results.jsonl
 results/*/kernel.log
 *.out
 *.err
+
+# Stray tool logs that land in the repo root.
+logs/

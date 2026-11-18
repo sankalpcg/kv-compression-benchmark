@@ -287,6 +287,35 @@ for mo in MODELS:
            if have((mo, "qvisible", "full", 1.0)) else float("nan"),
            "<- uncompressed baseline, reordering effect only"))
 
+# The ablation. qvisible changes two things at once: the policy can read the
+# question, and question-shaped text now sits at the end of the prefix, where an
+# observation window looks. qdecoy keeps the second and drops the first, using an
+# unrelated question of near-identical length. The two differences below split
+# the gap into a positional part and a semantic one.
+for mo in MODELS:
+    if "qdecoy" not in CONDS:
+        break
+    sm = mo.split("/")[-1]
+    block("%s: query decoy minus query hidden (position, not content)" % sm,
+          [("%s @ %g%%" % (NICE[m], 100 * rt),
+            (mo, "qdecoy", m, rt), (mo, "qhidden", m, rt))
+           for m in ORDER if m != "full" for rt in RATIOS])
+    if "qvisible" in CONDS:
+        block("%s: query visible minus query decoy (content, not position)" % sm,
+              [("%s @ %g%%" % (NICE[m], 100 * rt),
+                (mo, "qvisible", m, rt), (mo, "qdecoy", m, rt))
+               for m in ORDER if m != "full" for rt in RATIOS])
+    # The decoy is extra text the model reads regardless of compression, so the
+    # uncompressed arm is quoted too: a large movement here would mean the decoy
+    # confuses the model rather than the policy.
+    for lbl, c_a in (("decoy - hidden", "qdecoy"), ("visible - decoy", "qvisible")):
+        a, b = (mo, c_a, "full", 1.0), (mo, "qdecoy" if c_a == "qvisible" else "qhidden", "full", 1.0)
+        if have(a) and have(b):
+            say("  %-54s %+6.1f %s"
+                % ("Full cache (control), %s @ 100%%" % lbl,
+                   point[cidx[a]] - point[cidx[b]],
+                   "<- uncompressed baseline, prompt change only"))
+
 # cross-model retention, paired on the same samples
 if len(MODELS) > 1:
     a_m, b_m = MODELS[0], MODELS[1]

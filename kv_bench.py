@@ -133,7 +133,18 @@ if not 0 <= SHARD < NSHARDS:
 #   qhidden   question forwarded onto the already compressed cache, so every
 #             policy is query-agnostic. This is kvpress's default.
 #   qvisible  question inside the compressed region (kvpress --query_aware).
+#   qdecoy    an unrelated question of near-identical length sits where
+#             qvisible puts the real one, and the real question is forwarded
+#             afterwards as under qhidden. Holds the position and the size of
+#             the scored prefix fixed and changes only whether the text the
+#             observation window reads is the question being asked, which is
+#             what separates a positional effect from a semantic one.
 RULER_CONDITIONS = os.environ.get("RULER_CONDITIONS", "qhidden").split(",")
+_RULER_COND_OK = ("qhidden", "qvisible", "qdecoy")
+for _c in RULER_CONDITIONS:
+    if _c not in _RULER_COND_OK:
+        raise SystemExit("RULER_CONDITIONS: %r is not one of %s"
+                         % (_c, ", ".join(_RULER_COND_OK)))
 
 # Cache accessors. The DynamicCache API has changed across transformers
 # versions, so read and write through these and nothing else.
@@ -779,7 +790,45 @@ def ruler_prompt(tokenizer, sample, condition):
     post = post + sample["answer_prefix"]
     if condition == "qvisible":
         return (pre + sample["context"] + mid + sample["question"], post)
+    if condition == "qdecoy":
+        decoy = sample.get("decoy")
+        if not decoy:
+            raise RuntimeError("qdecoy needs sample['decoy']; attach_decoys() "
+                               "did not run for task %r" % sample["task"])
+        return (pre + sample["context"] + mid + decoy,
+                mid + sample["question"] + post)
     return (pre + sample["context"], mid + sample["question"] + post)
+
+
+def attach_decoys(tokenizer, samples):
+    """Give each sample an unrelated question to stand in for its own.
+
+    The decoy comes from another sample of the same task, chosen by closest
+    token length, so it is the same kind of text at the same position and
+    almost the same size. Length matters because the budget is a fraction of
+    the prefix: a decoy much shorter or longer would change how much cache the
+    policy keeps, which is the thing being held fixed.
+
+    Deterministic, with no generator of its own; ties go to the lower index. A
+    task with one sample has nothing to borrow from, and ruler_prompt() turns
+    that into an error rather than a silent fallback to the real question.
+    """
+    by_task = {}
+    for smp in samples:
+        by_task.setdefault(smp["task"], []).append(smp)
+    for task, group in by_task.items():
+        if len(group) < 2:
+            print("  WARNING: task %r has one sample, no decoy available"
+                  % task, flush=True)
+            continue
+        lens = [len(tokenizer(s["question"], add_special_tokens=False)["input_ids"])
+                for s in group]
+        for i, smp in enumerate(group):
+            j = min((k for k in range(len(group)) if k != i),
+                    key=lambda k: (abs(lens[k] - lens[i]), k))
+            smp["decoy"] = group[j]["question"]
+            smp["decoy_from"] = group[j]["index"]
+            smp["decoy_tokens"] = lens[j]
 
 
 _CTRL = dict.fromkeys(range(0x20))
@@ -1408,6 +1457,11 @@ def main_ruler():
     tok, model = build_model()
 
     samples = loader(tok)
+    if "qdecoy" in RULER_CONDITIONS:
+        attach_decoys(tok, samples)
+        n_dec = sum(1 for s in samples if s.get("decoy"))
+        print("  decoys attached to %d of %d samples" % (n_dec, len(samples)),
+              flush=True)
     tasks = []
     for s in samples:
         if s["task"] not in tasks:
@@ -1456,6 +1510,7 @@ def main_ruler():
         rec = dict(taskset=label, task=smp["task"], method=method,
                    ratio=ratio, depth=-1.0, trial=smp["index"],
                    condition=cond, ruler_config=cfg_label,
+                   decoy_from=smp.get("decoy_from", -1),
                    model=MODEL, ctx=S, seq_len=S, kept=round(kept, 2),
                    actual_ratio=round(kept / S, 4),
                    answer=" | ".join(map(str, smp["answers"]))[:120],
